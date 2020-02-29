@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Bitcot</string>
+    <string name="random_image">Random Image</string>
 </resources>

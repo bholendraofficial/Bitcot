@@ -8,9 +8,11 @@ import retrofit2.http.Headers;
 
 
 public interface ApiService {
-    String TAG = "ApiService";
-
     @Headers("Content-Type: application/json")
     @GET("breeds/list/all/")
     Call<JsonObject> getBreedList();
+
+    @Headers("Content-Type: application/json")
+    @GET("breeds/image/random")
+    Call<JsonObject> getRandomImage();
 }

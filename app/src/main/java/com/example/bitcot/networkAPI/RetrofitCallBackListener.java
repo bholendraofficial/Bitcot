@@ -6,5 +6,5 @@ import org.json.JSONException;
 
 
 public interface RetrofitCallBackListener {
-    void retrofitCallBackListener(JsonObject jsonObject, String action) throws JSONException;
+    void retrofitCallBackListener(JsonObject result, String action) throws JSONException;
 }

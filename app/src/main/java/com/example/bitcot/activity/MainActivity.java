@@ -1,6 +1,10 @@
 package com.example.bitcot.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +40,29 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
         setContentView(R.layout.activity_main);
         setupRecyclerView();
         getListofDogBreedsAPI();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.random:
+                openRandomImageActivity();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void openRandomImageActivity() {
+        Intent intent=new Intent(this,RandomImage.class);
+        startActivity(intent);
     }
 
     private void setupRecyclerView() {

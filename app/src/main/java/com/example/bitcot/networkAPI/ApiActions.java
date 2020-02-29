@@ -5,4 +5,5 @@ package com.example.bitcot.networkAPI;
  */
 public class ApiActions {
     public static final String ALL_BREEDS_LIST = "all_breeds_list";
+    public static final String RANDOM_IMAGE = "random_image";
 }
