@@ -13,6 +13,7 @@ import com.example.bitcot.RetrofitAPI.ApiActions;
 import com.example.bitcot.RetrofitAPI.ApiService;
 import com.example.bitcot.RetrofitAPI.ConnectToRetrofit;
 import com.example.bitcot.RetrofitAPI.RetrofitCallBackListener;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import org.json.JSONObject;
@@ -52,6 +53,14 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
 
     @Override
     public void retrofitCallBackListener(JsonObject result, String action) {
+        if (ApiActions.ALL_BREEDS_LIST.equals(action))
+        {
+            Gson gson=new Gson();
+            DogBreedsModel dogBreedsModel = gson.fromJson(result.getAsJsonObject("message"), DogBreedsModel.class);
+            dogBreedsModelList.add(dogBreedsModel);
+            dogBreedAdapter.notifyDataSetChanged();
+        }
+
         Toast.makeText(this, ""+result.toString(), Toast.LENGTH_SHORT).show();
     }
     private  void getListofBreedsAPI()

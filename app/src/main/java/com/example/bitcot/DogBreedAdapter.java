@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,7 +29,8 @@ public class DogBreedAdapter extends RecyclerView.Adapter<DogBreedAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-
+        DogBreedsModel dogBreedsModel=dogBreedsModelList.get(i);
+        myViewHolder.tv_title.setText(dogBreedsModel.getAffenpinscher().toString());
     }
 
     @Override
@@ -37,8 +39,10 @@ public class DogBreedAdapter extends RecyclerView.Adapter<DogBreedAdapter.MyView
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView tv_title;
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            tv_title=(TextView)itemView.findViewById(R.id.tv_title);
         }
     }
 }
