@@ -1,4 +1,4 @@
-package com.example.bitcot.RetrofitAPI;
+package com.example.bitcot.networkAPI;
 
 import android.app.Activity;
 import android.app.Dialog;

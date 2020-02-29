@@ -1,4 +1,4 @@
-package com.example.bitcot.RetrofitAPI;
+package com.example.bitcot.networkAPI;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

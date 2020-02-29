@@ -1,4 +1,4 @@
-package com.example.bitcot.RetrofitAPI;
+package com.example.bitcot.networkAPI;
 
 import com.google.gson.JsonObject;
 
