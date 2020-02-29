@@ -27,7 +27,6 @@ import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity implements RetrofitCallBackListener {
     private DogBreedAdapter dogBreedAdapter;
-    //    private List<DogBreedsModel> dogBreedsModelList = new ArrayList<>();
     private ArrayList<HashMap<String, Object>> dogBreedsModelList = new ArrayList<>();
 
 
@@ -61,7 +60,11 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
                 hashMap.put("data", jsonObject.get(key));
                 dogBreedsModelList.add(hashMap);
             }
-            dogBreedAdapter.notifyDataSetChanged();
+            if (dogBreedsModelList.size() > 0) {
+                dogBreedAdapter.notifyDataSetChanged();
+            }
+
+
         }
     }
 

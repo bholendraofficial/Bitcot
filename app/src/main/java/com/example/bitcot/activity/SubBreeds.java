@@ -33,6 +33,8 @@ public class SubBreeds extends AppCompatActivity {
         Intent intent = this.getIntent();
         Bundle bundle = intent.getExtras();
         if (bundle != null) {
+            String title = bundle.getString("title");
+            Objects.requireNonNull(getSupportActionBar()).setTitle(title);
             String data = bundle.getString("data");
             try {
                 JSONArray jsonArray = new JSONArray(data);

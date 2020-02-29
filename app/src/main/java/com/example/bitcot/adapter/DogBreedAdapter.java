@@ -19,6 +19,7 @@ import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class DogBreedAdapter extends RecyclerView.Adapter<DogBreedAdapter.MyViewHolder> {
     private Context context;
@@ -38,7 +39,7 @@ public class DogBreedAdapter extends RecyclerView.Adapter<DogBreedAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        String title = dogBreedsModelList.get(i).get("title").toString();
+        String title = Objects.requireNonNull(dogBreedsModelList.get(i).get("title")).toString();
         myViewHolder.tv_title.setText(title);
         myViewHolder.tv_title.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,7 @@ public class DogBreedAdapter extends RecyclerView.Adapter<DogBreedAdapter.MyView
                 if (jsonArray != null && jsonArray.length() > 0) {
                     Intent intent = new Intent(context, SubBreeds.class);
                     Bundle bundle = new Bundle();
+                    bundle.putString("title", title);
                     bundle.putString("data", jsonArray.toString());
                     intent.putExtras(bundle);
                     context.startActivity(intent);
