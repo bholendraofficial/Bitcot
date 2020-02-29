@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -48,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
         inflater.inflate(R.menu.menu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
     }
 
     private void openRandomImageActivity() {
-        Intent intent=new Intent(this,RandomImage.class);
+        Intent intent = new Intent(this, RandomImage.class);
         startActivity(intent);
     }
 
@@ -78,17 +78,17 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
     @Override
     public void retrofitCallBackListener(JsonObject result, String action) throws JSONException {
         if (ApiActions.ALL_BREEDS_LIST.equals(action)) {
-            JSONObject jsonObject = new JSONObject(result.getAsJsonObject("message").toString());
-            Iterator<String> keys = jsonObject.keys();
-            dogBreedsModelList.clear();
-            while (keys.hasNext()) {
-                String key = keys.next();
-                HashMap<String, Object> hashMap = new HashMap<>();
-                hashMap.put("title", key);
-                hashMap.put("data", jsonObject.get(key));
-                dogBreedsModelList.add(hashMap);
-            }
-            if (dogBreedsModelList.size() > 0) {
+            if (result.get("status").getAsString().equals("success")) {
+                JSONObject jsonObject = new JSONObject(result.getAsJsonObject("message").toString());
+                Iterator<String> keys = jsonObject.keys();
+                dogBreedsModelList.clear();
+                while (keys.hasNext()) {
+                    String key = keys.next();
+                    HashMap<String, Object> hashMap = new HashMap<>();
+                    hashMap.put("title", key);
+                    hashMap.put("data", jsonObject.get(key));
+                    dogBreedsModelList.add(hashMap);
+                }
                 dogBreedAdapter.notifyDataSetChanged();
             }
 
