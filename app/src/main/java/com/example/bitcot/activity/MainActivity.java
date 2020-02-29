@@ -2,7 +2,6 @@ package com.example.bitcot.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,13 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bitcot.R;
 import com.example.bitcot.adapter.DogBreedAdapter;
-import com.example.bitcot.model.DogBreedsModel;
 import com.example.bitcot.networkAPI.API_Config;
 import com.example.bitcot.networkAPI.ApiActions;
 import com.example.bitcot.networkAPI.ApiService;
 import com.example.bitcot.networkAPI.ConnectToRetrofit;
 import com.example.bitcot.networkAPI.RetrofitCallBackListener;
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import org.json.JSONException;
@@ -25,33 +22,26 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 
 import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity implements RetrofitCallBackListener {
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
     private DogBreedAdapter dogBreedAdapter;
-//    private List<DogBreedsModel> dogBreedsModelList = new ArrayList<>();
-    private ArrayList<HashMap<String,Object>> dogBreedsModelList = new ArrayList<>();
+    //    private List<DogBreedsModel> dogBreedsModelList = new ArrayList<>();
+    private ArrayList<HashMap<String, Object>> dogBreedsModelList = new ArrayList<>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findIDS();
-        setRecyclerView();
+        setupRecyclerView();
     }
 
-    private void findIDS() {
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-    }
-
-    private void setRecyclerView() {
+    private void setupRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         dogBreedAdapter = new DogBreedAdapter(this, dogBreedsModelList);
@@ -61,25 +51,18 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
     @Override
     public void retrofitCallBackListener(JsonObject result, String action) throws JSONException {
         if (ApiActions.ALL_BREEDS_LIST.equals(action)) {
-            Gson gson = new Gson();
-//            DogBreedsModel dogBreedsModel = gson.fromJson(result.getAsJsonObject("message"), DogBreedsModel.class);
-
-
             JSONObject jsonObject = new JSONObject(result.getAsJsonObject("message").toString());
             Iterator<String> keys = jsonObject.keys();
-
             dogBreedsModelList.clear();
-            while(keys.hasNext()) {
+            while (keys.hasNext()) {
                 String key = keys.next();
-                HashMap<String,Object> hashMap=new HashMap<>();
-                hashMap.put("title",key);
-                hashMap.put("data",jsonObject.get(key));
+                HashMap<String, Object> hashMap = new HashMap<>();
+                hashMap.put("title", key);
+                hashMap.put("data", jsonObject.get(key));
                 dogBreedsModelList.add(hashMap);
             }
             dogBreedAdapter.notifyDataSetChanged();
         }
-
-        Toast.makeText(this, "" + result.toString(), Toast.LENGTH_SHORT).show();
     }
 
     private void getListofBreedsAPI() {
