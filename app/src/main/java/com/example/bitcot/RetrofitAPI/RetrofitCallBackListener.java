@@ -1,7 +1,8 @@
 package com.example.bitcot.RetrofitAPI;
 
-import org.json.JSONException;
+import com.google.gson.JsonObject;
+
 
 public interface RetrofitCallBackListener {
-    void retrofitCallBackListener(String result, String action);
+    void retrofitCallBackListener(JsonObject jsonObject, String action);
 }

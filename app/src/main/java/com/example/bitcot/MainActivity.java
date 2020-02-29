@@ -2,6 +2,7 @@ package com.example.bitcot;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +13,7 @@ import com.example.bitcot.RetrofitAPI.ApiActions;
 import com.example.bitcot.RetrofitAPI.ApiService;
 import com.example.bitcot.RetrofitAPI.ConnectToRetrofit;
 import com.example.bitcot.RetrofitAPI.RetrofitCallBackListener;
+import com.google.gson.JsonObject;
 
 import org.json.JSONObject;
 
@@ -49,14 +51,14 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
     }
 
     @Override
-    public void retrofitCallBackListener(String result, String action) {
-
+    public void retrofitCallBackListener(JsonObject result, String action) {
+        Toast.makeText(this, ""+result.toString(), Toast.LENGTH_SHORT).show();
     }
     private  void getListofBreedsAPI()
     {
         try {
             ApiService apiService = API_Config.getAPIClientByGet();
-            Call<String> call = apiService.getBreedList();
+            Call<JsonObject> call = apiService.getBreedList();
             new ConnectToRetrofit(this, this, call, ApiActions.ALL_BREEDS_LIST);
 
         }catch (Exception ex)

@@ -8,6 +8,7 @@ import android.view.Window;
 import android.widget.Toast;
 
 import com.example.bitcot.R;
+import com.google.gson.JsonObject;
 
 import java.util.Objects;
 
@@ -18,11 +19,11 @@ import retrofit2.Response;
 public class ConnectToRetrofit {
     private String action = "";
     private RetrofitCallBackListener retrofitCallBackListener;
-    private Call<String> call;
+    private Call<JsonObject> call;
     private Dialog dialog;
     private Activity activity;
 
-    public ConnectToRetrofit(RetrofitCallBackListener retrofitCallBackListener, Activity activity, Call<String> _call, String action) {
+    public ConnectToRetrofit(RetrofitCallBackListener retrofitCallBackListener, Activity activity, Call<JsonObject> _call, String action) {
         this.retrofitCallBackListener = retrofitCallBackListener;
         this.action = action;
         this.call = _call;
@@ -49,14 +50,15 @@ public class ConnectToRetrofit {
         }
 
 
-        call.enqueue(new Callback<String>() {
+        call.enqueue(new Callback<JsonObject>() {
 
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 try {
                     if (response.code() == 200) {
+                        JsonObject jsonObject = response.body();
                         if (retrofitCallBackListener != null) {
-                            retrofitCallBackListener.retrofitCallBackListener(response.body(), action);
+                            retrofitCallBackListener.retrofitCallBackListener(jsonObject, action);
 
                         }
                     } else {
@@ -73,7 +75,7 @@ public class ConnectToRetrofit {
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<JsonObject> call, Throwable t) {
                 try {
                     Log.d("DEBUG", "onFailure" + t.fillInStackTrace() + "MESSAGE : " + t.getMessage());
 
