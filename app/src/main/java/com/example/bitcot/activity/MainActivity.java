@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
         if (ApiActions.ALL_BREEDS_LIST.equals(action)) {
             Gson gson = new Gson();
             DogBreedsModel dogBreedsModel = gson.fromJson(result.getAsJsonObject("message"), DogBreedsModel.class);
-            dogBreedsModelList = new ArrayList<>();
+            dogBreedsModelList.clear();
             dogBreedsModelList.add(dogBreedsModel);
             dogBreedAdapter.notifyDataSetChanged();
         }
