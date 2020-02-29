@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020. Bholendra Singh
+ */
+
 package com.example.bitcot.adapter;
 
 import android.content.Context;

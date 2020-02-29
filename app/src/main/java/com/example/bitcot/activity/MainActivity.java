@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020. Bholendra Singh
+ */
+
 package com.example.bitcot.activity;
 
 import android.content.Intent;
@@ -47,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
         inflater.inflate(R.menu.menu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
