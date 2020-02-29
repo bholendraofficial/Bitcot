@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupRecyclerView();
+        getListofDogBreedsAPI();
     }
 
     private void setupRecyclerView() {
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
         }
     }
 
-    private void getListofBreedsAPI() {
+    private void getListofDogBreedsAPI() {
         try {
             ApiService apiService = API_Config.getAPIClientByGet();
             Call<JsonObject> call = apiService.getBreedList();
@@ -78,9 +79,5 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
             ex.printStackTrace();
         }
 
-    }
-
-    public void hitapi(View view) {
-        getListofBreedsAPI();
     }
 }

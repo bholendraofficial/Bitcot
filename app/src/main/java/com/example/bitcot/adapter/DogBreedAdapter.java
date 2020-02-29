@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bitcot.R;
@@ -41,7 +42,7 @@ public class DogBreedAdapter extends RecyclerView.Adapter<DogBreedAdapter.MyView
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         String title = Objects.requireNonNull(dogBreedsModelList.get(i).get("title")).toString();
         myViewHolder.tv_title.setText(title);
-        myViewHolder.tv_title.setOnClickListener(new View.OnClickListener() {
+        myViewHolder.parentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 JSONArray jsonArray = (JSONArray) dogBreedsModelList.get(i).get("data");
@@ -65,10 +66,13 @@ public class DogBreedAdapter extends RecyclerView.Adapter<DogBreedAdapter.MyView
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
+        ConstraintLayout parentView;
         TextView tv_title;
+
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            parentView = itemView.findViewById(R.id.parentView);
             tv_title = itemView.findViewById(R.id.tv_title);
         }
     }
