@@ -58,6 +58,7 @@ public class RandomImage extends AppCompatActivity implements RetrofitCallBackLi
         if (ApiActions.RANDOM_IMAGE.equals(action)) {
             if (result.get("status").getAsString().equals("success")) {
                 String imgUrl = result.get("message").getAsString();
+                image_loader.setVisibility(View.VISIBLE);
                 Picasso.get().load(imgUrl).error(R.drawable.ic_launcher_background).into(img_random, new Callback() {
                     @Override
                     public void onSuccess() {
