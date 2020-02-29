@@ -1,306 +1,217 @@
 package com.example.bitcot;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class DogBreedsModel {
-    private List<String> affenpinscher;
-
-    private List<String> african;
-
-    private List<String> airedale;
-
-    private List<String> akita;
-
-    private List<String> appenzeller;
-
-    private List<String> australian;
-
-    private List<String> basenji;
-
-    private List<String> beagle;
-
-    private List<String> bluetick;
-
-    private List<String> borzoi;
-
-    private List<String> bouvier;
-
-    private List<String> boxer;
-
-    private List<String> brabancon;
-
-    private List<String> briard;
-
-    private List<String> buhund;
-
-    private List<String> bulldog;
-
-    private List<String> bullterrier;
-
-    private List<String> cairn;
-
-    private List<String> cattledog;
-
-    private List<String> chihuahua;
-
-    private List<String> chow;
-
-    private List<String> clumber;
-
-    private List<String> cockapoo;
-
-    private List<String> collie;
-
-    private List<String> coonhound;
-
-    private List<String> corgi;
-
-    private List<String> cotondetulear;
-
-    private List<String> dachshund;
-
-    private List<String> dalmatian;
-
-    private List<String> dane;
-
-    private List<String> deerhound;
-
-    private List<String> dhole;
-
-    private List<String> dingo;
-
-    private List<String> doberman;
-
-    private List<String> elkhound;
-
-    private List<String> entlebucher;
-
-    private List<String> eskimo;
-
-    private List<String> frise;
-
-    private List<String> germanshepherd;
-
-    private List<String> greyhound;
-
-    private List<String> groenendael;
-
-    private List<String> havanese;
-
-    private List<String> hound;
-
-    private List<String> husky;
-
-    private List<String> keeshond;
-
-    private List<String> kelpie;
-
-    private List<String> komondor;
-
-    private List<String> kuvasz;
-
-    private List<String> labrador;
-
-    private List<String> leonberg;
-
-    private List<String> lhasa;
-
-    private List<String> malamute;
-
-    private List<String> malinois;
-
-    private List<String> maltese;
-
-    private List<String> mastiff;
-
-    private List<String> mexicanhairless;
-
-    private List<String> mix;
-
-    private List<String> mountain;
-
-    private List<String> newfoundland;
-
-    private List<String> otterhound;
-
-    private List<String> papillon;
-
-    private List<String> pekinese;
-
-    private List<String> pembroke;
-
-    private List<String> pinscher;
-
-    private List<String> pitbull;
-
-    private List<String> pointer;
-
-    private List<String> pomeranian;
-
-    private List<String> poodle;
-
-    private List<String> pug;
-
-    private List<String> puggle;
-
-    private List<String> pyrenees;
-
-    private List<String> redbone;
-
-    private List<String> retriever;
-
-    private List<String> ridgeback;
-
-    private List<String> rottweiler;
-
-    private List<String> saluki;
-
-    private List<String> samoyed;
-
-    private List<String> schipperke;
-
-    private List<String> schnauzer;
-
-    private List<String> setter;
-
-    private List<String> sheepdog;
-
-    private List<String> shiba;
-
-    private List<String> shihtzu;
-
-    private List<String> spaniel;
-
-    private List<String> springer;
-
-    private List<String> stbernard;
-
-    private List<String> terrier;
-
-    private List<String> vizsla;
-
-    private List<String> waterdog;
-
-    private List<String> weimaraner;
-
-    private List<String> whippet;
-
-    private List<String> wolfhound;
-
-    public List<String> getAffenpinscher() {
-        return this.affenpinscher;
+public class DogBreedsModel implements Serializable {
+
+    private List<Object> affenpinscher = null;
+    private List<Object> african = null;
+    private List<Object> airedale = null;
+    private List<Object> akita = null;
+    private List<Object> appenzeller = null;
+    private List<String> australian = null;
+    private List<Object> basenji = null;
+    private List<Object> beagle = null;
+    private List<Object> bluetick = null;
+    private List<Object> borzoi = null;
+    private List<Object> bouvier = null;
+    private List<Object> boxer = null;
+    private List<Object> brabancon = null;
+    private List<Object> briard = null;
+    private List<String> buhund = null;
+    private List<String> bulldog = null;
+    private List<String> bullterrier = null;
+    private List<Object> cairn = null;
+    private List<String> cattledog = null;
+    private List<Object> chihuahua = null;
+    private List<Object> chow = null;
+    private List<Object> clumber = null;
+    private List<Object> cockapoo = null;
+    private List<String> collie = null;
+    private List<Object> coonhound = null;
+    private List<String> corgi = null;
+    private List<Object> cotondetulear = null;
+    private List<Object> dachshund = null;
+    private List<Object> dalmatian = null;
+    private List<String> dane = null;
+    private List<String> deerhound = null;
+    private List<Object> dhole = null;
+    private List<Object> dingo = null;
+    private List<Object> doberman = null;
+    private List<String> elkhound = null;
+    private List<Object> entlebucher = null;
+    private List<Object> eskimo = null;
+    private List<String> frise = null;
+    private List<Object> germanshepherd = null;
+    private List<String> greyhound = null;
+    private List<Object> groenendael = null;
+    private List<Object> havanese = null;
+    private List<String> hound = null;
+    private List<Object> husky = null;
+    private List<Object> keeshond = null;
+    private List<Object> kelpie = null;
+    private List<Object> komondor = null;
+    private List<Object> kuvasz = null;
+    private List<Object> labrador = null;
+    private List<Object> leonberg = null;
+    private List<Object> lhasa = null;
+    private List<Object> malamute = null;
+    private List<Object> malinois = null;
+    private List<Object> maltese = null;
+    private List<String> mastiff = null;
+    private List<Object> mexicanhairless = null;
+    private List<Object> mix = null;
+    private List<String> mountain = null;
+    private List<Object> newfoundland = null;
+    private List<Object> otterhound = null;
+    private List<Object> papillon = null;
+    private List<Object> pekinese = null;
+    private List<Object> pembroke = null;
+    private List<String> pinscher = null;
+    private List<Object> pitbull = null;
+    private List<String> pointer = null;
+    private List<Object> pomeranian = null;
+    private List<String> poodle = null;
+    private List<Object> pug = null;
+    private List<Object> puggle = null;
+    private List<Object> pyrenees = null;
+    private List<Object> redbone = null;
+    private List<String> retriever = null;
+    private List<String> ridgeback = null;
+    private List<Object> rottweiler = null;
+    private List<Object> saluki = null;
+    private List<Object> samoyed = null;
+    private List<Object> schipperke = null;
+    private List<String> schnauzer = null;
+    private List<String> setter = null;
+    private List<String> sheepdog = null;
+    private List<Object> shiba = null;
+    private List<Object> shihtzu = null;
+    private List<String> spaniel = null;
+    private List<String> springer = null;
+    private List<Object> stbernard = null;
+    private List<String> terrier = null;
+    private List<Object> vizsla = null;
+    private List<String> waterdog = null;
+    private List<Object> weimaraner = null;
+    private List<Object> whippet = null;
+    private List<String> wolfhound = null;
+
+    public List<Object> getAffenpinscher() {
+        return affenpinscher;
     }
 
-    public void setAffenpinscher(List<String> affenpinscher) {
+    public void setAffenpinscher(List<Object> affenpinscher) {
         this.affenpinscher = affenpinscher;
     }
 
-    public List<String> getAfrican() {
-        return this.african;
+    public List<Object> getAfrican() {
+        return african;
     }
 
-    public void setAfrican(List<String> african) {
+    public void setAfrican(List<Object> african) {
         this.african = african;
     }
 
-    public List<String> getAiredale() {
-        return this.airedale;
+    public List<Object> getAiredale() {
+        return airedale;
     }
 
-    public void setAiredale(List<String> airedale) {
+    public void setAiredale(List<Object> airedale) {
         this.airedale = airedale;
     }
 
-    public List<String> getAkita() {
-        return this.akita;
+    public List<Object> getAkita() {
+        return akita;
     }
 
-    public void setAkita(List<String> akita) {
+    public void setAkita(List<Object> akita) {
         this.akita = akita;
     }
 
-    public List<String> getAppenzeller() {
-        return this.appenzeller;
+    public List<Object> getAppenzeller() {
+        return appenzeller;
     }
 
-    public void setAppenzeller(List<String> appenzeller) {
+    public void setAppenzeller(List<Object> appenzeller) {
         this.appenzeller = appenzeller;
     }
 
     public List<String> getAustralian() {
-        return this.australian;
+        return australian;
     }
 
     public void setAustralian(List<String> australian) {
         this.australian = australian;
     }
 
-    public List<String> getBasenji() {
-        return this.basenji;
+    public List<Object> getBasenji() {
+        return basenji;
     }
 
-    public void setBasenji(List<String> basenji) {
+    public void setBasenji(List<Object> basenji) {
         this.basenji = basenji;
     }
 
-    public List<String> getBeagle() {
-        return this.beagle;
+    public List<Object> getBeagle() {
+        return beagle;
     }
 
-    public void setBeagle(List<String> beagle) {
+    public void setBeagle(List<Object> beagle) {
         this.beagle = beagle;
     }
 
-    public List<String> getBluetick() {
-        return this.bluetick;
+    public List<Object> getBluetick() {
+        return bluetick;
     }
 
-    public void setBluetick(List<String> bluetick) {
+    public void setBluetick(List<Object> bluetick) {
         this.bluetick = bluetick;
     }
 
-    public List<String> getBorzoi() {
-        return this.borzoi;
+    public List<Object> getBorzoi() {
+        return borzoi;
     }
 
-    public void setBorzoi(List<String> borzoi) {
+    public void setBorzoi(List<Object> borzoi) {
         this.borzoi = borzoi;
     }
 
-    public List<String> getBouvier() {
-        return this.bouvier;
+    public List<Object> getBouvier() {
+        return bouvier;
     }
 
-    public void setBouvier(List<String> bouvier) {
+    public void setBouvier(List<Object> bouvier) {
         this.bouvier = bouvier;
     }
 
-    public List<String> getBoxer() {
-        return this.boxer;
+    public List<Object> getBoxer() {
+        return boxer;
     }
 
-    public void setBoxer(List<String> boxer) {
+    public void setBoxer(List<Object> boxer) {
         this.boxer = boxer;
     }
 
-    public List<String> getBrabancon() {
-        return this.brabancon;
+    public List<Object> getBrabancon() {
+        return brabancon;
     }
 
-    public void setBrabancon(List<String> brabancon) {
+    public void setBrabancon(List<Object> brabancon) {
         this.brabancon = brabancon;
     }
 
-    public List<String> getBriard() {
-        return this.briard;
+    public List<Object> getBriard() {
+        return briard;
     }
 
-    public void setBriard(List<String> briard) {
+    public void setBriard(List<Object> briard) {
         this.briard = briard;
     }
 
     public List<String> getBuhund() {
-        return this.buhund;
+        return buhund;
     }
 
     public void setBuhund(List<String> buhund) {
@@ -308,7 +219,7 @@ public class DogBreedsModel {
     }
 
     public List<String> getBulldog() {
-        return this.bulldog;
+        return bulldog;
     }
 
     public void setBulldog(List<String> bulldog) {
@@ -316,111 +227,111 @@ public class DogBreedsModel {
     }
 
     public List<String> getBullterrier() {
-        return this.bullterrier;
+        return bullterrier;
     }
 
     public void setBullterrier(List<String> bullterrier) {
         this.bullterrier = bullterrier;
     }
 
-    public List<String> getCairn() {
-        return this.cairn;
+    public List<Object> getCairn() {
+        return cairn;
     }
 
-    public void setCairn(List<String> cairn) {
+    public void setCairn(List<Object> cairn) {
         this.cairn = cairn;
     }
 
     public List<String> getCattledog() {
-        return this.cattledog;
+        return cattledog;
     }
 
     public void setCattledog(List<String> cattledog) {
         this.cattledog = cattledog;
     }
 
-    public List<String> getChihuahua() {
-        return this.chihuahua;
+    public List<Object> getChihuahua() {
+        return chihuahua;
     }
 
-    public void setChihuahua(List<String> chihuahua) {
+    public void setChihuahua(List<Object> chihuahua) {
         this.chihuahua = chihuahua;
     }
 
-    public List<String> getChow() {
-        return this.chow;
+    public List<Object> getChow() {
+        return chow;
     }
 
-    public void setChow(List<String> chow) {
+    public void setChow(List<Object> chow) {
         this.chow = chow;
     }
 
-    public List<String> getClumber() {
-        return this.clumber;
+    public List<Object> getClumber() {
+        return clumber;
     }
 
-    public void setClumber(List<String> clumber) {
+    public void setClumber(List<Object> clumber) {
         this.clumber = clumber;
     }
 
-    public List<String> getCockapoo() {
-        return this.cockapoo;
+    public List<Object> getCockapoo() {
+        return cockapoo;
     }
 
-    public void setCockapoo(List<String> cockapoo) {
+    public void setCockapoo(List<Object> cockapoo) {
         this.cockapoo = cockapoo;
     }
 
     public List<String> getCollie() {
-        return this.collie;
+        return collie;
     }
 
     public void setCollie(List<String> collie) {
         this.collie = collie;
     }
 
-    public List<String> getCoonhound() {
-        return this.coonhound;
+    public List<Object> getCoonhound() {
+        return coonhound;
     }
 
-    public void setCoonhound(List<String> coonhound) {
+    public void setCoonhound(List<Object> coonhound) {
         this.coonhound = coonhound;
     }
 
     public List<String> getCorgi() {
-        return this.corgi;
+        return corgi;
     }
 
     public void setCorgi(List<String> corgi) {
         this.corgi = corgi;
     }
 
-    public List<String> getCotondetulear() {
-        return this.cotondetulear;
+    public List<Object> getCotondetulear() {
+        return cotondetulear;
     }
 
-    public void setCotondetulear(List<String> cotondetulear) {
+    public void setCotondetulear(List<Object> cotondetulear) {
         this.cotondetulear = cotondetulear;
     }
 
-    public List<String> getDachshund() {
-        return this.dachshund;
+    public List<Object> getDachshund() {
+        return dachshund;
     }
 
-    public void setDachshund(List<String> dachshund) {
+    public void setDachshund(List<Object> dachshund) {
         this.dachshund = dachshund;
     }
 
-    public List<String> getDalmatian() {
-        return this.dalmatian;
+    public List<Object> getDalmatian() {
+        return dalmatian;
     }
 
-    public void setDalmatian(List<String> dalmatian) {
+    public void setDalmatian(List<Object> dalmatian) {
         this.dalmatian = dalmatian;
     }
 
     public List<String> getDane() {
-        return this.dane;
+        return dane;
     }
 
     public void setDane(List<String> dane) {
@@ -428,343 +339,343 @@ public class DogBreedsModel {
     }
 
     public List<String> getDeerhound() {
-        return this.deerhound;
+        return deerhound;
     }
 
     public void setDeerhound(List<String> deerhound) {
         this.deerhound = deerhound;
     }
 
-    public List<String> getDhole() {
-        return this.dhole;
+    public List<Object> getDhole() {
+        return dhole;
     }
 
-    public void setDhole(List<String> dhole) {
+    public void setDhole(List<Object> dhole) {
         this.dhole = dhole;
     }
 
-    public List<String> getDingo() {
-        return this.dingo;
+    public List<Object> getDingo() {
+        return dingo;
     }
 
-    public void setDingo(List<String> dingo) {
+    public void setDingo(List<Object> dingo) {
         this.dingo = dingo;
     }
 
-    public List<String> getDoberman() {
-        return this.doberman;
+    public List<Object> getDoberman() {
+        return doberman;
     }
 
-    public void setDoberman(List<String> doberman) {
+    public void setDoberman(List<Object> doberman) {
         this.doberman = doberman;
     }
 
     public List<String> getElkhound() {
-        return this.elkhound;
+        return elkhound;
     }
 
     public void setElkhound(List<String> elkhound) {
         this.elkhound = elkhound;
     }
 
-    public List<String> getEntlebucher() {
-        return this.entlebucher;
+    public List<Object> getEntlebucher() {
+        return entlebucher;
     }
 
-    public void setEntlebucher(List<String> entlebucher) {
+    public void setEntlebucher(List<Object> entlebucher) {
         this.entlebucher = entlebucher;
     }
 
-    public List<String> getEskimo() {
-        return this.eskimo;
+    public List<Object> getEskimo() {
+        return eskimo;
     }
 
-    public void setEskimo(List<String> eskimo) {
+    public void setEskimo(List<Object> eskimo) {
         this.eskimo = eskimo;
     }
 
     public List<String> getFrise() {
-        return this.frise;
+        return frise;
     }
 
     public void setFrise(List<String> frise) {
         this.frise = frise;
     }
 
-    public List<String> getGermanshepherd() {
-        return this.germanshepherd;
+    public List<Object> getGermanshepherd() {
+        return germanshepherd;
     }
 
-    public void setGermanshepherd(List<String> germanshepherd) {
+    public void setGermanshepherd(List<Object> germanshepherd) {
         this.germanshepherd = germanshepherd;
     }
 
     public List<String> getGreyhound() {
-        return this.greyhound;
+        return greyhound;
     }
 
     public void setGreyhound(List<String> greyhound) {
         this.greyhound = greyhound;
     }
 
-    public List<String> getGroenendael() {
-        return this.groenendael;
+    public List<Object> getGroenendael() {
+        return groenendael;
     }
 
-    public void setGroenendael(List<String> groenendael) {
+    public void setGroenendael(List<Object> groenendael) {
         this.groenendael = groenendael;
     }
 
-    public List<String> getHavanese() {
-        return this.havanese;
+    public List<Object> getHavanese() {
+        return havanese;
     }
 
-    public void setHavanese(List<String> havanese) {
+    public void setHavanese(List<Object> havanese) {
         this.havanese = havanese;
     }
 
     public List<String> getHound() {
-        return this.hound;
+        return hound;
     }
 
     public void setHound(List<String> hound) {
         this.hound = hound;
     }
 
-    public List<String> getHusky() {
-        return this.husky;
+    public List<Object> getHusky() {
+        return husky;
     }
 
-    public void setHusky(List<String> husky) {
+    public void setHusky(List<Object> husky) {
         this.husky = husky;
     }
 
-    public List<String> getKeeshond() {
-        return this.keeshond;
+    public List<Object> getKeeshond() {
+        return keeshond;
     }
 
-    public void setKeeshond(List<String> keeshond) {
+    public void setKeeshond(List<Object> keeshond) {
         this.keeshond = keeshond;
     }
 
-    public List<String> getKelpie() {
-        return this.kelpie;
+    public List<Object> getKelpie() {
+        return kelpie;
     }
 
-    public void setKelpie(List<String> kelpie) {
+    public void setKelpie(List<Object> kelpie) {
         this.kelpie = kelpie;
     }
 
-    public List<String> getKomondor() {
-        return this.komondor;
+    public List<Object> getKomondor() {
+        return komondor;
     }
 
-    public void setKomondor(List<String> komondor) {
+    public void setKomondor(List<Object> komondor) {
         this.komondor = komondor;
     }
 
-    public List<String> getKuvasz() {
-        return this.kuvasz;
+    public List<Object> getKuvasz() {
+        return kuvasz;
     }
 
-    public void setKuvasz(List<String> kuvasz) {
+    public void setKuvasz(List<Object> kuvasz) {
         this.kuvasz = kuvasz;
     }
 
-    public List<String> getLabrador() {
-        return this.labrador;
+    public List<Object> getLabrador() {
+        return labrador;
     }
 
-    public void setLabrador(List<String> labrador) {
+    public void setLabrador(List<Object> labrador) {
         this.labrador = labrador;
     }
 
-    public List<String> getLeonberg() {
-        return this.leonberg;
+    public List<Object> getLeonberg() {
+        return leonberg;
     }
 
-    public void setLeonberg(List<String> leonberg) {
+    public void setLeonberg(List<Object> leonberg) {
         this.leonberg = leonberg;
     }
 
-    public List<String> getLhasa() {
-        return this.lhasa;
+    public List<Object> getLhasa() {
+        return lhasa;
     }
 
-    public void setLhasa(List<String> lhasa) {
+    public void setLhasa(List<Object> lhasa) {
         this.lhasa = lhasa;
     }
 
-    public List<String> getMalamute() {
-        return this.malamute;
+    public List<Object> getMalamute() {
+        return malamute;
     }
 
-    public void setMalamute(List<String> malamute) {
+    public void setMalamute(List<Object> malamute) {
         this.malamute = malamute;
     }
 
-    public List<String> getMalinois() {
-        return this.malinois;
+    public List<Object> getMalinois() {
+        return malinois;
     }
 
-    public void setMalinois(List<String> malinois) {
+    public void setMalinois(List<Object> malinois) {
         this.malinois = malinois;
     }
 
-    public List<String> getMaltese() {
-        return this.maltese;
+    public List<Object> getMaltese() {
+        return maltese;
     }
 
-    public void setMaltese(List<String> maltese) {
+    public void setMaltese(List<Object> maltese) {
         this.maltese = maltese;
     }
 
     public List<String> getMastiff() {
-        return this.mastiff;
+        return mastiff;
     }
 
     public void setMastiff(List<String> mastiff) {
         this.mastiff = mastiff;
     }
 
-    public List<String> getMexicanhairless() {
-        return this.mexicanhairless;
+    public List<Object> getMexicanhairless() {
+        return mexicanhairless;
     }
 
-    public void setMexicanhairless(List<String> mexicanhairless) {
+    public void setMexicanhairless(List<Object> mexicanhairless) {
         this.mexicanhairless = mexicanhairless;
     }
 
-    public List<String> getMix() {
-        return this.mix;
+    public List<Object> getMix() {
+        return mix;
     }
 
-    public void setMix(List<String> mix) {
+    public void setMix(List<Object> mix) {
         this.mix = mix;
     }
 
     public List<String> getMountain() {
-        return this.mountain;
+        return mountain;
     }
 
     public void setMountain(List<String> mountain) {
         this.mountain = mountain;
     }
 
-    public List<String> getNewfoundland() {
-        return this.newfoundland;
+    public List<Object> getNewfoundland() {
+        return newfoundland;
     }
 
-    public void setNewfoundland(List<String> newfoundland) {
+    public void setNewfoundland(List<Object> newfoundland) {
         this.newfoundland = newfoundland;
     }
 
-    public List<String> getOtterhound() {
-        return this.otterhound;
+    public List<Object> getOtterhound() {
+        return otterhound;
     }
 
-    public void setOtterhound(List<String> otterhound) {
+    public void setOtterhound(List<Object> otterhound) {
         this.otterhound = otterhound;
     }
 
-    public List<String> getPapillon() {
-        return this.papillon;
+    public List<Object> getPapillon() {
+        return papillon;
     }
 
-    public void setPapillon(List<String> papillon) {
+    public void setPapillon(List<Object> papillon) {
         this.papillon = papillon;
     }
 
-    public List<String> getPekinese() {
-        return this.pekinese;
+    public List<Object> getPekinese() {
+        return pekinese;
     }
 
-    public void setPekinese(List<String> pekinese) {
+    public void setPekinese(List<Object> pekinese) {
         this.pekinese = pekinese;
     }
 
-    public List<String> getPembroke() {
-        return this.pembroke;
+    public List<Object> getPembroke() {
+        return pembroke;
     }
 
-    public void setPembroke(List<String> pembroke) {
+    public void setPembroke(List<Object> pembroke) {
         this.pembroke = pembroke;
     }
 
     public List<String> getPinscher() {
-        return this.pinscher;
+        return pinscher;
     }
 
     public void setPinscher(List<String> pinscher) {
         this.pinscher = pinscher;
     }
 
-    public List<String> getPitbull() {
-        return this.pitbull;
+    public List<Object> getPitbull() {
+        return pitbull;
     }
 
-    public void setPitbull(List<String> pitbull) {
+    public void setPitbull(List<Object> pitbull) {
         this.pitbull = pitbull;
     }
 
     public List<String> getPointer() {
-        return this.pointer;
+        return pointer;
     }
 
     public void setPointer(List<String> pointer) {
         this.pointer = pointer;
     }
 
-    public List<String> getPomeranian() {
-        return this.pomeranian;
+    public List<Object> getPomeranian() {
+        return pomeranian;
     }
 
-    public void setPomeranian(List<String> pomeranian) {
+    public void setPomeranian(List<Object> pomeranian) {
         this.pomeranian = pomeranian;
     }
 
     public List<String> getPoodle() {
-        return this.poodle;
+        return poodle;
     }
 
     public void setPoodle(List<String> poodle) {
         this.poodle = poodle;
     }
 
-    public List<String> getPug() {
-        return this.pug;
+    public List<Object> getPug() {
+        return pug;
     }
 
-    public void setPug(List<String> pug) {
+    public void setPug(List<Object> pug) {
         this.pug = pug;
     }
 
-    public List<String> getPuggle() {
-        return this.puggle;
+    public List<Object> getPuggle() {
+        return puggle;
     }
 
-    public void setPuggle(List<String> puggle) {
+    public void setPuggle(List<Object> puggle) {
         this.puggle = puggle;
     }
 
-    public List<String> getPyrenees() {
-        return this.pyrenees;
+    public List<Object> getPyrenees() {
+        return pyrenees;
     }
 
-    public void setPyrenees(List<String> pyrenees) {
+    public void setPyrenees(List<Object> pyrenees) {
         this.pyrenees = pyrenees;
     }
 
-    public List<String> getRedbone() {
-        return this.redbone;
+    public List<Object> getRedbone() {
+        return redbone;
     }
 
-    public void setRedbone(List<String> redbone) {
+    public void setRedbone(List<Object> redbone) {
         this.redbone = redbone;
     }
 
     public List<String> getRetriever() {
-        return this.retriever;
+        return retriever;
     }
 
     public void setRetriever(List<String> retriever) {
@@ -772,47 +683,47 @@ public class DogBreedsModel {
     }
 
     public List<String> getRidgeback() {
-        return this.ridgeback;
+        return ridgeback;
     }
 
     public void setRidgeback(List<String> ridgeback) {
         this.ridgeback = ridgeback;
     }
 
-    public List<String> getRottweiler() {
-        return this.rottweiler;
+    public List<Object> getRottweiler() {
+        return rottweiler;
     }
 
-    public void setRottweiler(List<String> rottweiler) {
+    public void setRottweiler(List<Object> rottweiler) {
         this.rottweiler = rottweiler;
     }
 
-    public List<String> getSaluki() {
-        return this.saluki;
+    public List<Object> getSaluki() {
+        return saluki;
     }
 
-    public void setSaluki(List<String> saluki) {
+    public void setSaluki(List<Object> saluki) {
         this.saluki = saluki;
     }
 
-    public List<String> getSamoyed() {
-        return this.samoyed;
+    public List<Object> getSamoyed() {
+        return samoyed;
     }
 
-    public void setSamoyed(List<String> samoyed) {
+    public void setSamoyed(List<Object> samoyed) {
         this.samoyed = samoyed;
     }
 
-    public List<String> getSchipperke() {
-        return this.schipperke;
+    public List<Object> getSchipperke() {
+        return schipperke;
     }
 
-    public void setSchipperke(List<String> schipperke) {
+    public void setSchipperke(List<Object> schipperke) {
         this.schipperke = schipperke;
     }
 
     public List<String> getSchnauzer() {
-        return this.schnauzer;
+        return schnauzer;
     }
 
     public void setSchnauzer(List<String> schnauzer) {
@@ -820,7 +731,7 @@ public class DogBreedsModel {
     }
 
     public List<String> getSetter() {
-        return this.setter;
+        return setter;
     }
 
     public void setSetter(List<String> setter) {
@@ -828,31 +739,31 @@ public class DogBreedsModel {
     }
 
     public List<String> getSheepdog() {
-        return this.sheepdog;
+        return sheepdog;
     }
 
     public void setSheepdog(List<String> sheepdog) {
         this.sheepdog = sheepdog;
     }
 
-    public List<String> getShiba() {
-        return this.shiba;
+    public List<Object> getShiba() {
+        return shiba;
     }
 
-    public void setShiba(List<String> shiba) {
+    public void setShiba(List<Object> shiba) {
         this.shiba = shiba;
     }
 
-    public List<String> getShihtzu() {
-        return this.shihtzu;
+    public List<Object> getShihtzu() {
+        return shihtzu;
     }
 
-    public void setShihtzu(List<String> shihtzu) {
+    public void setShihtzu(List<Object> shihtzu) {
         this.shihtzu = shihtzu;
     }
 
     public List<String> getSpaniel() {
-        return this.spaniel;
+        return spaniel;
     }
 
     public void setSpaniel(List<String> spaniel) {
@@ -860,66 +771,67 @@ public class DogBreedsModel {
     }
 
     public List<String> getSpringer() {
-        return this.springer;
+        return springer;
     }
 
     public void setSpringer(List<String> springer) {
         this.springer = springer;
     }
 
-    public List<String> getStbernard() {
-        return this.stbernard;
+    public List<Object> getStbernard() {
+        return stbernard;
     }
 
-    public void setStbernard(List<String> stbernard) {
+    public void setStbernard(List<Object> stbernard) {
         this.stbernard = stbernard;
     }
 
     public List<String> getTerrier() {
-        return this.terrier;
+        return terrier;
     }
 
     public void setTerrier(List<String> terrier) {
         this.terrier = terrier;
     }
 
-    public List<String> getVizsla() {
-        return this.vizsla;
+    public List<Object> getVizsla() {
+        return vizsla;
     }
 
-    public void setVizsla(List<String> vizsla) {
+    public void setVizsla(List<Object> vizsla) {
         this.vizsla = vizsla;
     }
 
     public List<String> getWaterdog() {
-        return this.waterdog;
+        return waterdog;
     }
 
     public void setWaterdog(List<String> waterdog) {
         this.waterdog = waterdog;
     }
 
-    public List<String> getWeimaraner() {
-        return this.weimaraner;
+    public List<Object> getWeimaraner() {
+        return weimaraner;
     }
 
-    public void setWeimaraner(List<String> weimaraner) {
+    public void setWeimaraner(List<Object> weimaraner) {
         this.weimaraner = weimaraner;
     }
 
-    public List<String> getWhippet() {
-        return this.whippet;
+    public List<Object> getWhippet() {
+        return whippet;
     }
 
-    public void setWhippet(List<String> whippet) {
+    public void setWhippet(List<Object> whippet) {
         this.whippet = whippet;
     }
 
     public List<String> getWolfhound() {
-        return this.wolfhound;
+        return wolfhound;
     }
 
     public void setWolfhound(List<String> wolfhound) {
         this.wolfhound = wolfhound;
     }
+
 }
