@@ -2,6 +2,7 @@ package com.example.bitcot.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,8 +51,10 @@ public class DogBreedAdapter extends RecyclerView.Adapter<DogBreedAdapter.MyView
                 JSONArray jsonArray= (JSONArray) dogBreedsModelList.get(i).get("data");
                 if (jsonArray != null&& jsonArray.length()>0)
                 {
-                    Intent intent=new Intent(context, SubBreeds.class);
-                    intent.putExtra("","");
+                    Intent intent = new Intent(context, SubBreeds.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("data", jsonArray.toString());
+                    intent.putExtras(bundle);
                     context.startActivity(intent);
                 }else
                 {
