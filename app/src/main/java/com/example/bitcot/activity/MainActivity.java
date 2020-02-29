@@ -19,7 +19,12 @@ import com.example.bitcot.networkAPI.RetrofitCallBackListener;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import retrofit2.Call;
@@ -28,7 +33,8 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private DogBreedAdapter dogBreedAdapter;
-    private List<DogBreedsModel> dogBreedsModelList = new ArrayList<>();
+//    private List<DogBreedsModel> dogBreedsModelList = new ArrayList<>();
+    private ArrayList<HashMap<String,Object>> dogBreedsModelList = new ArrayList<>();
 
 
     @Override
@@ -53,12 +59,23 @@ public class MainActivity extends AppCompatActivity implements RetrofitCallBackL
     }
 
     @Override
-    public void retrofitCallBackListener(JsonObject result, String action) {
+    public void retrofitCallBackListener(JsonObject result, String action) throws JSONException {
         if (ApiActions.ALL_BREEDS_LIST.equals(action)) {
             Gson gson = new Gson();
-            DogBreedsModel dogBreedsModel = gson.fromJson(result.getAsJsonObject("message"), DogBreedsModel.class);
+//            DogBreedsModel dogBreedsModel = gson.fromJson(result.getAsJsonObject("message"), DogBreedsModel.class);
+
+
+            JSONObject jsonObject = new JSONObject(result.getAsJsonObject("message").toString());
+            Iterator<String> keys = jsonObject.keys();
+
             dogBreedsModelList.clear();
-            dogBreedsModelList.add(dogBreedsModel);
+            while(keys.hasNext()) {
+                String key = keys.next();
+                HashMap<String,Object> hashMap=new HashMap<>();
+                hashMap.put("title",key);
+                hashMap.put("data",jsonObject.get(key));
+                dogBreedsModelList.add(hashMap);
+            }
             dogBreedAdapter.notifyDataSetChanged();
         }
 

@@ -1,24 +1,33 @@
 package com.example.bitcot.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bitcot.R;
+import com.example.bitcot.activity.SubBreeds;
 import com.example.bitcot.model.DogBreedsModel;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class DogBreedAdapter extends RecyclerView.Adapter<DogBreedAdapter.MyViewHolder> {
     private Context context;
-    private List<DogBreedsModel> dogBreedsModelList;
+    private ArrayList<HashMap<String,Object>> dogBreedsModelList;
 
-    public DogBreedAdapter(Context context, List<DogBreedsModel> dogBreedsModelList) {
+    public DogBreedAdapter(Context context, ArrayList<HashMap<String,Object>> dogBreedsModelList) {
         this.context = context;
         this.dogBreedsModelList = dogBreedsModelList;
     }
@@ -32,8 +41,23 @@ public class DogBreedAdapter extends RecyclerView.Adapter<DogBreedAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        DogBreedsModel dogBreedsModel = dogBreedsModelList.get(i);
-        myViewHolder.tv_title.setText(dogBreedsModel.getAffenpinscher().toString());
+        String title=dogBreedsModelList.get(i).get("title").toString();
+        myViewHolder.tv_title.setText(title);
+        myViewHolder.tv_title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JSONArray jsonArray= (JSONArray) dogBreedsModelList.get(i).get("data");
+                if (jsonArray != null&& jsonArray.length()>0)
+                {
+                    Intent intent=new Intent(context, SubBreeds.class);
+                    intent.putExtra("","");
+                    context.startActivity(intent);
+                }else
+                {
+                    Toast.makeText(context, "No more sub breeds.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
